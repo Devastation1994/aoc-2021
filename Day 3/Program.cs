@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Day_3
 {
-    class Day3
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var step1Input = Helper.GetInputAsString();
             Helper.StartAnswer();

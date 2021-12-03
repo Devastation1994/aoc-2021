@@ -3,9 +3,9 @@ using System;
 
 namespace Day_2
 {
-    class Day2
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var inputs = Helper.GetInputAsString();
             Helper.StartAnswer();

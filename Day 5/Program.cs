@@ -1,11 +1,10 @@
 ﻿using Helpers;
-using System;
 
-namespace Day_4
+namespace Day_5
 {
-    class Day4
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var input = Helper.GetInputAsString();
             Helper.StartAnswer();

@@ -6,7 +6,7 @@ using System.Net.Http;
 
 namespace AoC2021
 {
-    public class Day1
+    public class Program
     {
         static void Main(string[] args)
         {
