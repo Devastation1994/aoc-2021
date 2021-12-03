@@ -23,9 +23,19 @@ namespace Helpers
             Console.WriteLine($"AoC 2021 Day {day} Part {part}: {answer}");
         }
 
+        public static void LogAnswer(int day, int part, string answer, long time)
+        {
+            Console.WriteLine($"AoC 2021 Day {day} Part {part}: {answer} Took: {time} ticks");
+        }
+
         public static void LogAnswer(int day, int part, int answer)
         {
             Console.WriteLine($"AoC 2021 Day {day} Part {part}: {answer}");
+        }
+
+        public static void LogAnswer(int day, int part, int answer, long time)
+        {
+            Console.WriteLine($"AoC 2021 Day {day} Part {part}: {answer} Took: {time} ticks");
         }
     }
 }
