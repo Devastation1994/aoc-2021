@@ -1,4 +1,5 @@
 ﻿using Helpers;
+using System;
 
 namespace Day_5
 {
@@ -7,14 +8,12 @@ namespace Day_5
         static void Main()
         {
             var input = Helper.GetInputAsString();
-            Helper.StartAnswer();
 
-            Helper.EndAnswer("");
+            Helper.LogAnswer("");
 
             input = Helper.GetInputAsString();
-            Helper.StartAnswer();
 
-            Helper.EndAnswer("");
+            Helper.LogAnswer("");
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Day_2
         static void Main()
         {
             var inputs = Helper.GetInputAsString();
-            Helper.StartAnswer();
             var horizontalPosition = 0;
             var depth = 0;
 
@@ -31,8 +30,7 @@ namespace Day_2
                 }
             }
 
-            Helper.EndAnswer(horizontalPosition * depth);
-            Helper.StartAnswer();
+            Helper.LogAnswer(horizontalPosition * depth);
 
             var aim = 0;
             horizontalPosition = 0;
@@ -58,7 +56,7 @@ namespace Day_2
                 }
             }
 
-            Helper.EndAnswer(horizontalPosition * depth);
+            Helper.LogAnswer(horizontalPosition * depth);
         }
     }
 }

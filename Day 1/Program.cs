@@ -11,7 +11,6 @@ namespace AoC2021
         static void Main(string[] args)
         {
             var numbers = Helper.GetInputAsInt();
-            Helper.StartAnswer();
             var count = 0;
 
             for(var i = 1; i < numbers.Count; i++)
@@ -22,9 +21,8 @@ namespace AoC2021
                 }
             }
 
-            Helper.EndAnswer(count);
-            Helper.StartAnswer();
-
+            Helper.LogAnswer(count);
+            
             count = 0;
             var measurement = numbers.GetRange(0, 3).Sum();
 
@@ -40,7 +38,7 @@ namespace AoC2021
                 measurement = calc;
             }
 
-            Helper.EndAnswer(count);
+            Helper.LogAnswer(count);
         }
     }
 }

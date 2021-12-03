@@ -8,14 +8,12 @@ namespace Day_4
         static void Main()
         {
             var input = Helper.GetInputAsString();
-            Helper.StartAnswer();
 
-            Helper.EndAnswer("");
+            Helper.LogAnswer("");
 
             input = Helper.GetInputAsString();
-            Helper.StartAnswer();
 
-            Helper.EndAnswer("");
+            Helper.LogAnswer("");
         }
     }
 }

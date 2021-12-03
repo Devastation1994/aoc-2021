@@ -13,7 +13,9 @@ namespace Helpers
 
         public static List<string> GetInputAsString()
         {
-            return File.ReadAllLines("input.txt").ToList();
+            var input = File.ReadAllLines("input.txt").ToList();
+            stopwatch.Restart();
+            return input;
         }
 
         public static List<int> GetInputAsInt()
@@ -21,20 +23,16 @@ namespace Helpers
             return GetInputAsString().Select(int.Parse).ToList();
         }
 
-        public static void StartAnswer()
-        {
-            stopwatch.Restart();
-        }
-
-        public static void EndAnswer(string answer)
+        public static void LogAnswer(string answer)
         {
             stopwatch.Stop();
             Console.WriteLine($"Answer: {answer}  Duration {stopwatch.ElapsedMilliseconds} ms");
+            stopwatch.Restart();
         }
 
-        public static void EndAnswer(int answer)
+        public static void LogAnswer(int answer)
         {
-            EndAnswer(answer.ToString());
+            LogAnswer(answer.ToString());
         }
     }
 }
