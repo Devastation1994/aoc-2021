@@ -1,0 +1,19 @@
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Day 2.exe
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Day 2.deps.json
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Day 2.runtimeconfig.json
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Day 2.runtimeconfig.dev.json
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Day 2.dll
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\ref\Day 2.dll
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Day 2.pdb
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.csprojAssemblyReference.cache
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.AssemblyInfoInputs.cache
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.AssemblyInfo.cs
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.csproj.CoreCompileInputs.cache
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.dll
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\ref\Day 2.dll
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.pdb
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.genruntimeconfig.cache
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Helpers.dll
+C:\Users\Devastation\source\repos\AoC2021\Day 2\bin\Debug\net5.0\Helpers.pdb
+C:\Users\Devastation\source\repos\AoC2021\Day 2\obj\Debug\net5.0\Day 2.csproj.CopyComplete
