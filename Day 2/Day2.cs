@@ -7,7 +7,7 @@ namespace Day_2
     {
         static void Main(string[] args)
         {
-            var inputs = Helper.GetInputAsString(2);
+            var inputs = Helper.GetInputAsString();
             var horizontalPosition = 0;
             var depth = 0;
 

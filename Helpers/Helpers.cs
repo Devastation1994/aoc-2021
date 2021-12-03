@@ -8,14 +8,14 @@ namespace Helpers
 {
     public static class Helper
     {
-        public static List<string> GetInputAsString(int day)
+        public static List<string> GetInputAsString()
         {
-            return File.ReadAllText($"day{day}.txt").Split('\n').ToList();
+            return File.ReadAllText($"input.txt").Replace("\r","").Split('\n').ToList();
         }
 
-        public static List<int> GetInputAsInt(int day)
+        public static List<int> GetInputAsInt()
         {
-            return GetInputAsString(day).Select(int.Parse).ToList();
+            return GetInputAsString().Select(int.Parse).ToList();
         }
 
         public static void LogAnswer(int day, int part, string answer)
