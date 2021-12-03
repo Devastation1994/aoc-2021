@@ -1,7 +1,5 @@
 ﻿using Helpers;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Day_3
@@ -11,65 +9,40 @@ namespace Day_3
         static void Main(string[] args)
         {
             var step1Input = Helper.GetInputAsString();
-            var watch = new Stopwatch();
-            watch.Start();
-            var binaryNumber1 = "";
-            var binaryNumber2 = "";
+            Helper.StartAnswer();
+            var binaryNumber = "";
 
-            for (int i = 0; i <= 11; i++)
+            for (var i = 0; i <= step1Input[0].Length - 1; i++)
             {
-                var zeroBit = step1Input.Where(input => input[i] == '0').Count();
-                var oneBit = step1Input.Where(input => input[i] == '1').Count();
-
-                binaryNumber1 += zeroBit > oneBit ? '0' : '1';
-                binaryNumber2 += zeroBit < oneBit ? '0' : '1';
+                binaryNumber += step1Input.Count(input => input[i] == '0') > step1Input.Count / 2 ? '0' : '1';
             }
-            watch.Stop();
 
-            Helper.LogAnswer(3, 1, Convert.ToInt32(binaryNumber1, 2) * Convert.ToInt32(binaryNumber2, 2), watch.ElapsedMilliseconds);
+            Helper.EndAnswer(Convert.ToInt32(binaryNumber, 2) * Convert.ToInt32(ReverseBinary(binaryNumber), 2));
 
             var oxygenGenRating = Helper.GetInputAsString();
             var co2Rating = Helper.GetInputAsString();
 
-            watch.Restart();
-            for (int i = 0; i <= 12; i++)
+            Helper.StartAnswer();
+
+            for (int i = 0; i < step1Input[0].Length - 1; i++)
             {
-                var zeroBit = 0;
-                var oneBit = 0;
-
-                if (oxygenGenRating.Count > 1)
-                {
-                    zeroBit = oxygenGenRating.Count(input => input[i] == '0');
-                    oneBit = oxygenGenRating.Count(input => input[i] == '1');
-
-                    if (oneBit >= zeroBit)
-                    {
-                        oxygenGenRating.RemoveAll(ogr => ogr[i] == '0');
-                    }
-                    else
-                    {
-                        oxygenGenRating.RemoveAll(ogr => ogr[i] == '1');
-                    }
-                }
-
-                if (co2Rating.Count > 1)
-                {
-                    zeroBit = co2Rating.Count(input => input[i] == '0');
-                    oneBit = co2Rating.Count(input => input[i] == '1');
-
-                    if (oneBit >= zeroBit)
-                    {
-                        co2Rating.RemoveAll(ogr => ogr[i] == '1');
-                    }
-                    else
-                    {
-                        co2Rating.RemoveAll(ogr => ogr[i] == '0');
-                    }
-                }
+                if (oxygenGenRating.Count > 1) oxygenGenRating = oxygenGenRating.Where(ogr => ogr[i] == ((oxygenGenRating.Count(ogr2 => ogr2[i] == '0') > (oxygenGenRating.Count / 2)) ? '0' : '1')).ToList();
+                if (co2Rating.Count > 1) co2Rating = co2Rating.Where(co2r => co2r[i] == ((co2Rating.Count(co2r1 => co2r1[i] == '0') > (co2Rating.Count / 2)) ? '1' : '0')).ToList();
             }
 
-            watch.Stop();
-            Helper.LogAnswer(3, 2, Convert.ToInt32(oxygenGenRating[0], 2) * Convert.ToInt32(co2Rating[0], 2), watch.ElapsedMilliseconds);
+            Helper.EndAnswer(Convert.ToInt32(oxygenGenRating[0], 2) * Convert.ToInt32(co2Rating[0], 2));
+        }
+
+        static string ReverseBinary(string bits)
+        {
+            var newBinary = "";
+
+            foreach (var bit in bits)
+            {
+                newBinary += bit == '0' ? "1" : "0";
+            }
+
+            return newBinary;
         }
     }
 }

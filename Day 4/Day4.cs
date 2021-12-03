@@ -3,16 +3,19 @@ using System;
 
 namespace Day_4
 {
-    class Program
+    class Day4
     {
         static void Main(string[] args)
         {
             var input = Helper.GetInputAsString();
-            Helper.LogAnswer(3, 1, "");
+            Helper.StartAnswer();
 
+            Helper.EndAnswer("");
 
             input = Helper.GetInputAsString();
-            Helper.LogAnswer(3, 1, "");
+            Helper.StartAnswer();
+
+            Helper.EndAnswer("");
         }
     }
 }

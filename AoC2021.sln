@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day 3", "Day 3\Day 3.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{3150AB91-BB85-41B0-A724-AAC3981082DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day 4", "Day 4\Day 4.csproj", "{462A4E48-9297-4729-8806-8BE447C1A65C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day 4", "Day 4\Day 4.csproj", "{462A4E48-9297-4729-8806-8BE447C1A65C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
