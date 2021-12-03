@@ -26,7 +26,7 @@ namespace Day_3
             }
             watch.Stop();
 
-            Helper.LogAnswer(3, 1, Convert.ToInt32(binaryNumber1, 2) * Convert.ToInt32(binaryNumber2, 2), watch.ElapsedTicks);
+            Helper.LogAnswer(3, 1, Convert.ToInt32(binaryNumber1, 2) * Convert.ToInt32(binaryNumber2, 2), watch.ElapsedMilliseconds);
 
             var oxygenGenRating = Helper.GetInputAsString();
             var co2Rating = Helper.GetInputAsString();
@@ -69,7 +69,7 @@ namespace Day_3
             }
 
             watch.Stop();
-            Helper.LogAnswer(3, 2, Convert.ToInt32(oxygenGenRating[0], 2) * Convert.ToInt32(co2Rating[0], 2), watch.ElapsedTicks);
+            Helper.LogAnswer(3, 2, Convert.ToInt32(oxygenGenRating[0], 2) * Convert.ToInt32(co2Rating[0], 2), watch.ElapsedMilliseconds);
         }
     }
 }
