@@ -6,11 +6,12 @@ namespace Day_5
 {
     public class Program
     {
+        static int maxValue = 1001;
+        static string[,] grid = new string[maxValue, maxValue];
+
         static void Main()
-        {
-            var maxValue = 1000;
+        {            
             var input = Helper.GetInputAsString();
-            var grid = new string[maxValue, maxValue];
 
             for (int i = 0; i < maxValue; i++)
             {
@@ -39,7 +40,7 @@ namespace Day_5
                     {
                         for (int i = x1; i >= x2; i--)
                         {
-                            grid[y1, i] = UpdateField(grid[y1, i]);
+                           UpdateField(y1, i);
                         }
                     }
                     // Go right
@@ -47,7 +48,7 @@ namespace Day_5
                     {
                         for (int i = x1; i <= x2; i++)
                         {
-                            grid[y1, i] = UpdateField(grid[y1, i]);
+                            UpdateField(y1, i);
                         }
                     }
                 }
@@ -59,7 +60,7 @@ namespace Day_5
                     {
                         for (int i = y1; i >= y2; i--)
                         {
-                            grid[i, x1] = UpdateField(grid[i, x1]);
+                           UpdateField(i, x1);
                         }
                     }
                     // Go down
@@ -67,8 +68,49 @@ namespace Day_5
                     {
                         for (int i = y1; i <= y2; i++)
                         {
-                            grid[i, x1] = UpdateField(grid[i, x1]);
+                            UpdateField(i, x1);
                         }
+                    }
+                }
+                // Diagonal
+                else
+                {
+                    // Up right
+                    if (x1 < x2 && y1 > y2)
+                    {
+                        for (int i = 0; i <= x2 - x1; i++)
+                        {
+                            UpdateField(y1 - i, x1 + i);
+                        }
+                    }
+                    // Up left
+                    else if (x1 > x2 && y1 > y2)
+                    {
+                        for (int i = 0; i <= x1 - x2; i++)
+                        {
+                            UpdateField(y1 - i,x1 - i);
+                        }
+                    }
+                    // Down right
+                    else if (x1 < x2 && y1 < y2)
+                    {
+                        for (int i = 0; i <= y2 - y1; i++)
+                        {
+                            UpdateField(y1 + i, x1 + i);
+                        }
+                    }
+                    // Down left
+                    else if (x1 > x2 && y1 < y2)
+                    {
+                        for (int i = 0; i <= y2 - y1; i++)
+                        {
+                            UpdateField(y1 + i, x1 - i);
+                        }
+                    }
+                    else
+                    {
+                        // should never hit this if other conditions are met
+                        throw new Exception("YOU SUCK");
                     }
                 }
             }
@@ -82,26 +124,26 @@ namespace Day_5
                 }
             }
 
-            Helper.LogAnswer(overlaps);
-
-            for (int i = 0; i < grid.GetLength(0); i++)
+            if (maxValue  < 1000)
             {
-                for (int j = 0; j < grid.GetLength(1); j++)
+                for (int i = 0; i < grid.GetLength(0); i++)
                 {
-                    Console.Write(grid[i, j]);
+                    for (int j = 0; j < grid.GetLength(1); j++)
+                    {
+                        Console.Write(grid[i, j]);
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
             }
 
-            //input = Helper.GetInputAsString();
+            Helper.LogAnswer(overlaps);            
 
             Helper.LogAnswer("");
         }
 
-        public static string UpdateField(string value)
+        public static void UpdateField(int j, int i )
         {
-
-            return value == "." ? "1" : (int.Parse(value) + 1).ToString();
+            grid[j,i] = grid[j,i] == "." ? "1" : (int.Parse(grid[j,i]) + 1).ToString();
         }
     }
 }
