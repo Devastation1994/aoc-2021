@@ -11,16 +11,28 @@ namespace Helpers
     {
         static readonly Stopwatch stopwatch = new();
 
-        public static List<string> GetInputAsString()
+        public static List<string> GetDataAsString()
         {
             var input = File.ReadAllLines("input.txt").ToList();
             stopwatch.Restart();
             return input;
         }
 
-        public static List<int> GetInputAsInt()
+        public static List<int> GetDataAsInt()
         {
-            return GetInputAsString().Select(int.Parse).ToList();
+            return GetDataAsString().Select(int.Parse).ToList();
+        }
+
+        public static List<string> GetTestDataAsString()
+        {
+            var input = File.ReadAllLines("input.txt").ToList();
+            stopwatch.Restart();
+            return input;
+        }
+
+        public static List<int> GetTestDataAsInt()
+        {
+            return GetDataAsString().Select(int.Parse).ToList();
         }
 
         public static void LogAnswer(string answer)

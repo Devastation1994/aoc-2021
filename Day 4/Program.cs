@@ -9,7 +9,7 @@ namespace Day_4
     {
         static void Main()
         {
-            var input = Helper.GetInputAsString();
+            var input = Helper.GetDataAsString();
             var selectedNumbers = input[0].Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
             var bingoSheetNumbers = new List<string>();
             input.RemoveAt(0);
@@ -49,7 +49,7 @@ namespace Day_4
 
             Helper.LogAnswer(winningBoardCalc[0]);
 
-            input = Helper.GetInputAsString();
+            input = Helper.GetDataAsString();
 
             Helper.LogAnswer(winningBoardCalc[winningBoardCalc.Count - 1]);
         }

@@ -6,12 +6,12 @@ namespace Day_5
 {
     public class Program
     {
-        static int maxValue = 1001;
+        static int maxValue = 1000;
         static string[,] grid = new string[maxValue, maxValue];
 
         static void Main()
         {            
-            var input = Helper.GetInputAsString();
+            var input = Helper.GetDataAsString();
 
             for (int i = 0; i < maxValue; i++)
             {
@@ -124,8 +124,6 @@ namespace Day_5
                 }
             }
 
-            if (maxValue  < 1000)
-            {
                 for (int i = 0; i < grid.GetLength(0); i++)
                 {
                     for (int j = 0; j < grid.GetLength(1); j++)
@@ -134,7 +132,7 @@ namespace Day_5
                     }
                     Console.WriteLine();
                 }
-            }
+            
 
             Helper.LogAnswer(overlaps);            
 
