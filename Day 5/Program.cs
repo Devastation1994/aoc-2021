@@ -1,6 +1,5 @@
 ﻿using Helpers;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Day_5
@@ -9,12 +8,13 @@ namespace Day_5
     {
         static void Main()
         {
+            var maxValue = 1000;
             var input = Helper.GetInputAsString();
-            var grid = new string[1000, 1000];
+            var grid = new string[maxValue, maxValue];
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < maxValue; i++)
             {
-                for (int j = 0; j < 1000; j++)
+                for (int j = 0; j < maxValue; j++)
                 {
                     grid[i, j] = ".";
                 }
@@ -30,9 +30,6 @@ namespace Day_5
 
                 //2D ARRAYS ARE Y/X
 
-                // x1,y1 done
-                grid[y1, x1] = UpdateField(grid[y1, x1]);
-
                 // x1 -> x2
                 // Is horizontal
                 if (y1 == y2)
@@ -40,7 +37,7 @@ namespace Day_5
                     // Go left
                     if (x1 > x2)
                     {
-                        for (int i = x1 - 1; i >= x2; i--)
+                        for (int i = x1; i >= x2; i--)
                         {
                             grid[y1, i] = UpdateField(grid[y1, i]);
                         }
@@ -48,7 +45,7 @@ namespace Day_5
                     // Go right
                     else
                     {
-                        for (int i = x1 + 1; i <= x2; i++)
+                        for (int i = x1; i <= x2; i++)
                         {
                             grid[y1, i] = UpdateField(grid[y1, i]);
                         }
@@ -57,24 +54,23 @@ namespace Day_5
                 // Is Vertical
                 else if (x1 == x2)
                 {
-                    // Go down
+                    // Go up
                     if (y1 > y2)
                     {
-                        for (int i = y2 - 1; i >= y1; i--)
+                        for (int i = y1; i >= y2; i--)
                         {
                             grid[i, x1] = UpdateField(grid[i, x1]);
                         }
                     }
-                    // Go up
+                    // Go down
                     else
                     {
-                        for (int i = y1 + 1; i <= y2; i++)
+                        for (int i = y1; i <= y2; i++)
                         {
                             grid[i, x1] = UpdateField(grid[i, x1]);
                         }
                     }
                 }
-
             }
 
             var overlaps = 0;
@@ -88,6 +84,15 @@ namespace Day_5
 
             Helper.LogAnswer(overlaps);
 
+            for (int i = 0; i < grid.GetLength(0); i++)
+            {
+                for (int j = 0; j < grid.GetLength(1); j++)
+                {
+                    Console.Write(grid[i, j]);
+                }
+                Console.WriteLine();
+            }
+
             //input = Helper.GetInputAsString();
 
             Helper.LogAnswer("");
@@ -95,6 +100,7 @@ namespace Day_5
 
         public static string UpdateField(string value)
         {
+
             return value == "." ? "1" : (int.Parse(value) + 1).ToString();
         }
     }
