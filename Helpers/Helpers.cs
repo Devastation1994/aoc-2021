@@ -10,6 +10,8 @@ namespace Helpers
     public static class Helper
     {
         static readonly Stopwatch stopwatch = new();
+        static int count = 0;
+        static readonly string[] portions = new string[] { "Example", "Part 1", "Part 2" };
 
         public static List<string> GetDataAsString()
         {
@@ -38,7 +40,8 @@ namespace Helpers
         public static void LogAnswer(string answer)
         {
             stopwatch.Stop();
-            Console.WriteLine($"Answer: {answer}  Duration {stopwatch.ElapsedMilliseconds} ms");
+            Console.WriteLine($"{portions[count]} Answer: {answer}  Duration {stopwatch.ElapsedMilliseconds} ms");
+            count++;
             stopwatch.Restart();
         }
 
