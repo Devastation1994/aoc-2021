@@ -27,7 +27,7 @@ namespace Helpers
 
         public static List<string> GetTestDataAsString()
         {
-            var input = File.ReadAllLines("input.txt").ToList();
+            var input = File.ReadAllLines("test.txt").ToList();
             stopwatch.Restart();
             return input;
         }
