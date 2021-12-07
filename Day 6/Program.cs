@@ -41,14 +41,14 @@ namespace Day_6
         {
             // Test data
 
-            Helper.LogAnswer(SolveQuestion(Helper.GetTestDataAsString(), 18));
+            Helper.LogAnswer(SolveQuestion(Helper.GetInput(), 18));
             // Part 1
 
-            Helper.LogAnswer(SolveQuestion(Helper.GetDataAsString(), 80));
+            Helper.LogAnswer(SolveQuestion(Helper.GetInput(), 80));
 
             // Part 2
 
-            Helper.LogAnswer(SolveQuestion(Helper.GetDataAsString(), 256));
+            Helper.LogAnswer(SolveQuestion(Helper.GetInput(), 256));
         }
     }
 }

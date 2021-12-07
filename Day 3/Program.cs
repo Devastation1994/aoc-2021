@@ -8,7 +8,7 @@ namespace Day_3
     {
         static void Main()
         {
-            var step1Input = Helper.GetDataAsString();
+            var step1Input = Helper.GetInput();
             var binaryNumber = "";
 
             for (var i = 0; i <= step1Input[0].Length - 1; i++)
@@ -18,8 +18,8 @@ namespace Day_3
 
             Helper.LogAnswer(Convert.ToInt32(binaryNumber, 2) * Convert.ToInt32(ReverseBinary(binaryNumber), 2));
 
-            var oxygenGenRating = Helper.GetDataAsString();
-            var co2Rating = Helper.GetDataAsString();
+            var oxygenGenRating = Helper.GetInput();
+            var co2Rating = Helper.GetInput();
 
             for (int i = 0; i < step1Input[0].Length - 1; i++)
             {

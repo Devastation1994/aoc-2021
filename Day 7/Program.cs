@@ -1,25 +1,26 @@
 ﻿using Helpers;
 using System;
+using System.Collections.Generic;
 
 namespace Day_7
 {
     public class Program
     {
+        static string SolveQuestion(List<string> data)
+        {
+            return string.Empty;
+        }
+
         static void Main()
         {
             // Test data
-            var testData = Helper.GetTestDataAsString();
+            Helper.LogAnswer(SolveQuestion(Helper.GetInput()));
 
-            Helper.LogAnswer("");
             // Part 1
-            var input = Helper.GetDataAsString();
-
-            Helper.LogAnswer("");
+            Helper.LogAnswer(SolveQuestion(Helper.GetInput()));
 
             // Part 2
-            input = Helper.GetDataAsString();
-
-            Helper.LogAnswer("");
+            Helper.LogAnswer(SolveQuestion(Helper.GetInput()));
         }
     }
 }

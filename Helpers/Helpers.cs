@@ -9,32 +9,20 @@ namespace Helpers
 {
     public static class Helper
     {
-        static readonly Stopwatch stopwatch = new();
+        static readonly Stopwatch stopwatch = new ();
         static int count = 0;
         static readonly string[] portions = new string[] { "Example", "Part 1", "Part 2" };
+        static readonly string[] inputFiles = new string[] { "test.txt", "input.txt" };
 
-        public static List<string> GetDataAsString()
+        static Helper()
         {
-            var input = File.ReadAllLines("input.txt").ToList();
-            stopwatch.Restart();
+            stopwatch.Start();
+        }
+
+        public static List<string> GetInput()
+        {
+            var input = File.ReadAllLines(inputFiles[count == 0 ? 0 : 1]).ToList();
             return input;
-        }
-
-        public static List<int> GetDataAsInt()
-        {
-            return GetDataAsString().Select(int.Parse).ToList();
-        }
-
-        public static List<string> GetTestDataAsString()
-        {
-            var input = File.ReadAllLines("test.txt").ToList();
-            stopwatch.Restart();
-            return input;
-        }
-
-        public static List<int> GetTestDataAsInt()
-        {
-            return GetDataAsString().Select(int.Parse).ToList();
         }
 
         public static void LogAnswer(string answer)

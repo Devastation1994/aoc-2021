@@ -11,7 +11,7 @@ namespace Day_5
 
         static void Main()
         {            
-            var input = Helper.GetDataAsString();
+            var input = Helper.GetInput();
 
             for (int i = 0; i < maxValue; i++)
             {
@@ -134,9 +134,7 @@ namespace Day_5
                 }
             
 
-            Helper.LogAnswer(overlaps);            
-
-            Helper.LogAnswer("");
+            Helper.LogAnswer(overlaps);
         }
 
         public static void UpdateField(int j, int i )

@@ -10,7 +10,7 @@ namespace AoC2021
     {
         static void Main(string[] args)
         {
-            var numbers = Helper.GetDataAsInt();
+            var numbers = Helper.GetInput().Select(int.Parse).ToList();
             var count = 0;
 
             for(var i = 1; i < numbers.Count; i++)
