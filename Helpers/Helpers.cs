@@ -11,8 +11,7 @@ namespace Helpers
     {
         static readonly Stopwatch stopwatch = new ();
         static int count = 0;
-        static readonly string[] portions = new string[] { "Example", "Part 1", "Part 2" };
-        static readonly string[] inputFiles = new string[] { "test.txt", "input.txt" };
+        static readonly string[] portions = new string[] { "Example Part 1", "Example Part 2", "Part 1", "Part 2" };
 
         static Helper()
         {
@@ -21,7 +20,13 @@ namespace Helpers
 
         public static List<string> GetInput()
         {
-            var input = File.ReadAllLines(inputFiles[count == 0 ? 0 : 1]).ToList();
+            var input = File.ReadAllLines("input.txt").ToList();
+            return input;
+        }
+
+        public static List<string> GetTestInput()
+        {
+            var input = File.ReadAllLines("test.txt").ToList();
             return input;
         }
 
