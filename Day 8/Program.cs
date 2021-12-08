@@ -14,15 +14,12 @@ namespace Day_8
             var outputValue = new List<string>();
             var uniqueLengths = new int[4] { 2, 4, 3, 7 };
             var part1 = 0;
-            var letters = new string[] { "a", "b", "c", "d", "e", "f", "g" };
-            
-
-            //1-8 2-6 3-8 4-7 5-4 6-9 7-7
+            var letters = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
             
             foreach (var row in data)
             {
                 outputValue.Add("");
-                var segmentOrder = new List<string>(new string[7]);
+                var segmentOrder = new List<char>(new char[7]);
                 var letterCount = new List<int>();
                 var outputs = row.Split('|')[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 var segments = row.Split('|')[0].Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -43,40 +40,10 @@ namespace Day_8
                 segmentOrder[1] = letters[letterCount.IndexOf(6)];
                 segmentOrder[4] = letters[letterCount.IndexOf(4)];
                 segmentOrder[5] = letters[letterCount.IndexOf(9)];
-
-                foreach (var character in segments.Where(i => i.Length == 2).First())
-                {
-                    if (segmentOrder[5].ToString() != character.ToString())
-                    {
-                        segmentOrder[2] = character.ToString();
-                        break;
-                    }
-                }
-
-                foreach (var character in segments.Where(i => i.Length == 3).First())
-                {
-                    if (!segmentOrder.Contains(character.ToString()))
-                    {
-                        segmentOrder[0] = character.ToString();
-                        break;
-                    }
-                }
-
-                foreach (var character in segments.Where(i => i.Length == 4).First())
-                {
-                    if(!segmentOrder.Contains(character.ToString()))
-                    {
-                        segmentOrder[3] = character.ToString();
-                    }
-                }
-
-                foreach (var letter in letters)
-                {
-                    if (!segmentOrder.Contains(letter.ToString()))
-                    {
-                        segmentOrder[6] = letter;
-                    }
-                }
+                segmentOrder[2] = segments.Where(i => i.Length == 2).First().ToCharArray().Where(i => i != segmentOrder[5]).First();
+                segmentOrder[0] = segments.Where(i => i.Length == 3).First().ToCharArray().Where(i => !segmentOrder.Contains(i)).First();
+                segmentOrder[3] = segments.Where(i => i.Length == 4).First().ToCharArray().Where(i => !segmentOrder.Contains(i)).First();
+                segmentOrder[6] = letters.Where(i => !segmentOrder.Contains(i)).First();
 
                 foreach (var output in outputs)
                 {
@@ -88,7 +55,7 @@ namespace Day_8
                     var test = "";
                     foreach (var character in output)
                     {
-                        test += segmentOrder.IndexOf(character.ToString());
+                        test += segmentOrder.IndexOf(character);
                     }
 
                     var test1 = test.ToCharArray();
