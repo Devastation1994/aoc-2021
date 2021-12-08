@@ -21,7 +21,6 @@ namespace Day_8
                 outputValue.Add("");
                 var segmentOrder = new List<char>(new char[7]);
                 var letterCount = new List<int>();
-                var outputs = row.Split('|')[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 var segments = row.Split('|')[0].Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
                 for (int i = 0; i < letters.Length; i++)
@@ -45,7 +44,7 @@ namespace Day_8
                 segmentOrder[3] = segments.Where(i => i.Length == 4).First().ToCharArray().Where(i => !segmentOrder.Contains(i)).First();
                 segmentOrder[6] = letters.Where(i => !segmentOrder.Contains(i)).First();
 
-                foreach (var output in outputs)
+                foreach (var output in row.Split('|')[1].Split(' ', StringSplitOptions.RemoveEmptyEntries))
                 {
                     var test = "";
                     foreach (var character in output)
