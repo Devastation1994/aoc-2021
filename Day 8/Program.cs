@@ -36,7 +36,7 @@ namespace Day_8
                         }
                     }
                 }
-
+                
                 segmentOrder[1] = letters[letterCount.IndexOf(6)];
                 segmentOrder[4] = letters[letterCount.IndexOf(4)];
                 segmentOrder[5] = letters[letterCount.IndexOf(9)];
@@ -47,11 +47,6 @@ namespace Day_8
 
                 foreach (var output in outputs)
                 {
-                    if (uniqueLengths.Contains(output.Length))
-                    {
-                        part1++;
-                    }
-
                     var test = "";
                     foreach (var character in output)
                     {
@@ -63,6 +58,8 @@ namespace Day_8
                     Array.Sort(test1);
 
                     outputValue[^1] += numberCombosPart2.ToList().IndexOf(new string(test1));
+
+                    part1 += uniqueLengths.Contains(output.Length) ? 1 : 0;
                 }
             }
 
