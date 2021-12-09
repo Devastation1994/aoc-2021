@@ -41,7 +41,7 @@ namespace Year2021
         {
             // Test data
 
-            Helper.LogAnswer(SolveQuestion(Helper.GetInput(), 18));
+            Helper.LogAnswer(SolveQuestion(Helper.GetTestInput(), 18));
             // Part 1
 
             Helper.LogAnswer(SolveQuestion(Helper.GetInput(), 80));

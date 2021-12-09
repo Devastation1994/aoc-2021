@@ -135,8 +135,6 @@ namespace Year2021
             basins.Sort();
             basins.Reverse();
 
-            //Console.WriteLine(string.Join(',',basins));
-
             // Part 2
             Helper.LogAnswer(basins[0] * basins[1] * basins[2]);
         }
@@ -227,7 +225,7 @@ namespace Year2021
         public static void Run()
         {
             // Test data
-            SolveQuestion(Helper.GetInputFromApi(9));
+            SolveQuestion(Helper.GetTestInput());
 
             // Part 2
             SolveQuestion(Helper.GetInput());
