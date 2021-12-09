@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 
-namespace AoC2021
+namespace Year2021
 {
-    public class Program
+    public class Day1
     {
-        static void Main(string[] args)
+        public Day1()
+        {
+
+        }
+
+        static void Run(string[] args)
         {
             var numbers = Helper.GetInput().Select(int.Parse).ToList();
             var count = 0;

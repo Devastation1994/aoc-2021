@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Day_9
+namespace Year2021
 {
-    public class Program
+    public class Day9
     {
         static List<int> basins = new List<int>();
         static string allBasins = "";
@@ -135,7 +135,7 @@ namespace Day_9
             basins.Sort();
             basins.Reverse();
 
-            Console.WriteLine(string.Join(',',basins));
+            //Console.WriteLine(string.Join(',',basins));
 
             // Part 2
             Helper.LogAnswer(basins[0] * basins[1] * basins[2]);
@@ -224,10 +224,10 @@ namespace Day_9
             }
         }
 
-        static void Main()
+        public static void Run()
         {
             // Test data
-            SolveQuestion(Helper.GetTestInput());
+            SolveQuestion(Helper.GetInputFromApi(9));
 
             // Part 2
             SolveQuestion(Helper.GetInput());
