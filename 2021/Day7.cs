@@ -35,7 +35,7 @@ namespace Year2021
             return part == 1 ? fuelCost.Min(): newFuelCost.Min();
         }
 
-        static void Run()
+       public static void Run()
         {
             // Test data Part 1
             Helper.LogAnswer(SolveQuestion(Helper.GetTestInput(), 1));

@@ -6,7 +6,7 @@ namespace Year2021
 {
     public class Day3
     {
-        static void Run()
+       public static void Run()
         {
             var step1Input = Helper.GetInput();
             var binaryNumber = "";

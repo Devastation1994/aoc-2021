@@ -37,7 +37,7 @@ namespace Year2021
             return lanturnFish.Sum().ToString();
         }
 
-        static void Run()
+       public static void Run()
         {
             // Test data
 

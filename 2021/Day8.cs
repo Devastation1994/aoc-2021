@@ -76,7 +76,7 @@ namespace Year2021
             return new string(chars);
         }
 
-        static void Run()
+       public static void Run()
         {
             // Test data
             SolveQuestion(Helper.GetTestInput());

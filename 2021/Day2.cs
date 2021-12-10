@@ -5,7 +5,7 @@ namespace Year2021
 {
     public class Day2
     {
-        static void Run()
+       public static void Run()
         {
             var inputs = Helper.GetInput();
             var horizontalPosition = 0;

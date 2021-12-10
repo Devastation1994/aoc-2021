@@ -130,20 +130,16 @@ namespace Year2021
                 }
             }
 
+            //Part 1
+            Helper.LogAnswer(lowPoints);
+
             for (int i = 0; i < lowPointList.Count; i++)
             {
-                if (i == 11)
-                {
-
-                }
                 basins.Add(0);
                 var index = lowPointList[i].Split(',').Select(int.Parse).ToList();
 
                 Recursion((index[0], index[1]));
             }
-
-            //Part 1
-            Helper.LogAnswer(lowPoints);
 
             basins.Sort();
             basins.Reverse();

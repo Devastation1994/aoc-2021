@@ -9,7 +9,7 @@ namespace Year2021
         static int maxValue = 1000;
         static string[,] grid = new string[maxValue, maxValue];
 
-        static void Run()
+       public static void Run()
         {            
             var input = Helper.GetInput();
 

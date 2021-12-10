@@ -22,9 +22,9 @@ namespace Helpers
         public static List<string> GetInput()
         {
             var day = new StackTrace().GetFrame(1).GetMethod().ReflectedType.Name;
-            var client = new WebClient();
-            client.Headers.Add("cookie", "session=53616c7465645f5fc557fc794c2d46bebaeb0cd04c16c63df2c0b6bcd9a030b9a40af28eed3908363e362e13a3a56191");
-            return client.DownloadString($"https://adventofcode.com/2021/day/{day[3..]}/input").Split("\n", StringSplitOptions.RemoveEmptyEntries).ToList();
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("cookie", "session=53616c7465645f5fc557fc794c2d46bebaeb0cd04c16c63df2c0b6bcd9a030b9a40af28eed3908363e362e13a3a56191");
+            return client.GetStringAsync($"https://adventofcode.com/2021/day/{day[3..]}/input").Result.Split("\n", StringSplitOptions.RemoveEmptyEntries).ToList();
         }
 
         public static List<string> GetTestInput()

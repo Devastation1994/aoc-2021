@@ -7,7 +7,7 @@ namespace Year2021
 {
     public class Day4
     {
-        static void Run()
+       public static void Run()
         {
             var input = Helper.GetInput();
             var selectedNumbers = input[0].Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
