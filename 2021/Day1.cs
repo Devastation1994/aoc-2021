@@ -13,7 +13,7 @@ namespace Year2021
 
         }
 
-        public static void Run(string[] args)
+        public static void Run()
         {
             var numbers = Helper.GetInput().Select(int.Parse).ToList();
             var count = 0;
