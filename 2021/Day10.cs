@@ -13,67 +13,72 @@ namespace Year2021
         {
             var openingCharacters = new List<string> { "(", "[", "{", "<", };
             var closingCharacters = new List<string> { ")", "]", "}", ">" };
+            var part1Value = new int[] { 3, 57, 1197, 25137 };
             var illegalCharacters = new List<string>();
+            var part2 = new List<string>();
+
+            // Part 1
+            var endings = new List<string>();
+            var incompleteLines = new List<string>();
 
             foreach (var line in data)
             {
-                if (line == "{([(<{}[<>[]}>{[]{[(<()>")
-                {
-
-                }
-
-                var openings = new List<string>();
-                var endings = new List<string>();
+                endings.Add("");
+                var badLine = false;
 
                 foreach (var column in line)
                 {
+                    var index = closingCharacters.IndexOf(column.ToString()) != -1 ?
+                        closingCharacters.IndexOf(column.ToString()) : openingCharacters.IndexOf(column.ToString());
+
                     if (openingCharacters.Contains(column.ToString()))
                     {
-                        openings.Add(column.ToString());
+                        endings[^1] += (closingCharacters[index]);
                         continue;
+                    }
+
+                    if (column.ToString() == endings[^1][^1].ToString())
+                    {
+                        endings[^1] = endings[^1].Remove(endings[^1].Count() - 1);
                     }
                     else
                     {
-                        endings.Add(column.ToString());
+                        illegalCharacters.Add(column.ToString());
+                        badLine = true;
+                        break;
                     }
+                }
 
-                    for (int i = 0; i < closingCharacters.Count; i++)
-                    {
-                        var test = openings.Count(oc => oc == openingCharacters[i]);
-                        var test1 = endings.Count(cc => cc == closingCharacters[i]);
-
-                        if (openings.Count(oc => oc == openingCharacters[i]) < endings.Count(cc => cc == closingCharacters[i]))
-                        {
-                            illegalCharacters.Add(column.ToString());
-                            break;
-                        }
-                    }
+                if (!badLine)
+                {
+                    incompleteLines.Add(endings[^1]);
                 }
             }
 
-            var output = 0;
+            var part1 = 0;
 
             foreach (var character in illegalCharacters)
             {
-                switch (character)
-                {
-                    case ")":
-                        output += 3;
-                        break;
-                    case "]":
-                        output += 57;
-                        break;
-                    case "}":
-                        output += 1197;
-                        break;
-                    case ">":
-                        output += 25137;
-                        break;
+                part1 += part1Value[closingCharacters.IndexOf(character.ToString())];
+            }
 
+            Helper.LogAnswer(part1);
+
+            // Part 2
+            var output2 = new List<long>();
+
+            for (int i = 0; i < incompleteLines.Count; i++)
+            {
+                output2.Add(0);
+
+                for (int j = incompleteLines[i].Count() - 1; j >= 0; j--)
+                {
+                    output2[^1] *= 5;
+                    output2[^1] += closingCharacters.IndexOf(incompleteLines[i][j].ToString()) + 1;
                 }
             }
 
-            Helper.LogAnswer(output);
+            Helper.LogAnswer(output2.OrderBy(i => i).ToList()[output2.Count / 2]);
         }
 
         public static void Run()
@@ -82,7 +87,7 @@ namespace Year2021
             SolveQuestion(Helper.GetTestInput());
 
             // Part 2
-            //SolveQuestion(Helper.GetInput());
+            SolveQuestion(Helper.GetInput());
         }
     }
 }

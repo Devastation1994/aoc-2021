@@ -45,5 +45,10 @@ namespace Helpers
         {
             LogAnswer(answer.ToString());
         }
+
+        public static void LogAnswer(long answer)
+        {
+            LogAnswer(answer.ToString());
+        }
     }
 }
