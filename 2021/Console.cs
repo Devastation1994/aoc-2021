@@ -8,9 +8,11 @@ namespace Year2021
     {
         static void Main(string[] args)
         {
-            var days = Assembly.GetExecutingAssembly().GetTypes().Where(i => i.Name.StartsWith("Day")).Last();
+            //var days = Assembly.GetExecutingAssembly().GetTypes().Where(i => i.Name.StartsWith("Day")).Last();
 
-            days.GetMethod("Run").Invoke(Activator.CreateInstance(days), null);
+            //days.GetMethod("Run").Invoke(Activator.CreateInstance(days), null);
+
+            Day9.Run();
         }
     }
 }
