@@ -50,5 +50,15 @@ namespace Helpers
         {
             LogAnswer(answer.ToString());
         }
+
+        public static void WriteLine(string value)
+        {
+            Console.WriteLine(value);
+        }
+
+        public static void Write(string value)
+        {
+            Console.Write(value);
+        }
     }
 }
