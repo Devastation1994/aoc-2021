@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Year2021
 {
-    public class Day
+    public class Day13
     {
         static void SolveQuestion(List<string> data)
         {

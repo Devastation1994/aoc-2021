@@ -11,7 +11,7 @@ namespace Year2021
     {
         static void SolveQuestion(List<string> data)
         {
-            var 
+             
         }
 
         public static void Run()

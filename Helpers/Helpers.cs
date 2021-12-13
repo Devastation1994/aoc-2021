@@ -60,5 +60,32 @@ namespace Helpers
         {
             Console.Write(value);
         }
+
+        public static void Print2dArray<T>(this T[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    Console.Write(array[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static string[,] Initialize2dArray(int y, int x, string value)
+        {
+            var array = new string[y, x];
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = value;
+                }
+            }
+
+            return array;
+        }
     }
 }
