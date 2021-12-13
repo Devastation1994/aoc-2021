@@ -51,8 +51,8 @@ namespace Year2021
             foreach (var fold in foldAlongList)
             {
                 grid = FoldGrid(grid, fold);
-                Helper.WriteLine($"Post {fold} fold");
-                grid.Print2dArray();
+                //Helper.WriteLine($"Post {fold} fold");
+                //grid.Print2dArray();
                 break;
             }
 
@@ -78,15 +78,16 @@ namespace Year2021
             switch (split[0])
             {
                 case "y":
-                    newGrid = Helper.Initialize2dArray((maxY + 1) / 2, maxX, ".");
+                    newGrid = Helper.Initialize2dArray((maxY + 1) / 2, maxX + 1, ".");
                     for (int x = 0; x <= maxX; x++)
                     {
                         for (int y = 0; y <= maxY; y++)
                         {
-                            if (y == maxY && x == 0)
+                            if (grid[y, x] != "#")
                             {
-
+                                continue;
                             }
+
                             if (y >= maxY / 2)
                             {
                                 newGrid[maxY - y, x] = grid[y, x];
@@ -99,14 +100,19 @@ namespace Year2021
                     }
                     return newGrid;
                 case "x":
-                    newGrid = Helper.Initialize2dArray(maxY, (maxX + 1) / 2, ".");
-                    for (int x = 0; x < maxX; x++)
+                    newGrid = Helper.Initialize2dArray(maxY + 1, (maxX + 1) / 2, ".");
+                    for (int x = 0; x <= maxX; x++)
                     {
-                        for (int y = 0; y < maxY; y++)
+                        for (int y = 0; y <= maxY; y++)
                         {
-                            if (x > maxX + 1 / 2)
+                            if (grid[y, x] != "#")
                             {
-                                newGrid[maxX - y, x] = grid[y, x];
+                                continue;
+                            }
+
+                            if (x >= maxX / 2)
+                            {
+                                newGrid[maxY, maxX - x] = grid[y, x];
                             }
                             else
                             {
@@ -125,7 +131,7 @@ namespace Year2021
             SolveQuestion(Helper.GetTestInput());
 
             // Part 2
-            //SolveQuestion(Helper.GetInput());
+            SolveQuestion(Helper.GetInput());
         }
     }
 }
